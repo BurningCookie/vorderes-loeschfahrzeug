@@ -74,7 +74,7 @@ public class PlayerObjectController : NetworkBehaviour
 
     public void CanStartGame(string SceneName)
     {
-        if(hasAuthority)
+        if(isServer)
         {
             CmdCanStartGame(SceneName);
         }
