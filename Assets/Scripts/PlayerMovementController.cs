@@ -12,6 +12,7 @@ public class PlayerMovementController : NetworkBehaviour
     public GameObject PlayerModel;
     public GameObject PlayerObject;
     public GameObject own_camera;
+    public GameObject own_glasses;
     public Transform groundcheck;
     public float distancetoground;
     public LayerMask groundLayerMask;
@@ -36,7 +37,7 @@ public class PlayerMovementController : NetworkBehaviour
 
             if(isLocalPlayer)
             {
-                ActivateOwnCam();
+                ToggleOwnObjects();
                 SetPosition();
             }
             
@@ -48,9 +49,10 @@ public class PlayerMovementController : NetworkBehaviour
         }
     }
 
-    private void ActivateOwnCam()
+    private void ToggleOwnObjects()
     {
         own_camera.SetActive(true);
+        own_glasses.SetActive(false);
     }
 
     public void SetPosition()
