@@ -104,6 +104,7 @@ MonoBehaviour:
   crcon: {fileID: 3803489347633337125}
   PlayerModel: {fileID: 4263437289136331740}
   PlayerObject: {fileID: 1540425707947152625}
+  own_camera: {fileID: 7585598592283955359}
   groundcheck: {fileID: 8687413904873704714}
   distancetoground: 1
   groundLayerMask:
@@ -324,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &7894843288456067937
 Transform:
   m_ObjectHideFlags: 0

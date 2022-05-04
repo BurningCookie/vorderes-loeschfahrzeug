@@ -11,6 +11,7 @@ public class PlayerMovementController : NetworkBehaviour
     public CharacterController crcon;
     public GameObject PlayerModel;
     public GameObject PlayerObject;
+    public GameObject own_camera;
     public Transform groundcheck;
     public float distancetoground;
     public LayerMask groundLayerMask;
@@ -21,6 +22,7 @@ public class PlayerMovementController : NetworkBehaviour
     private void Start()
     {
         PlayerModel.SetActive(false);
+        own_camera.SetActive(false);
     }
 
     private void Update()
@@ -31,6 +33,7 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 PlayerModel.SetActive(true);
                 SetPosition();
+                ActivateOwnCam();
             }
             
             if(hasAuthority)
@@ -39,6 +42,11 @@ public class PlayerMovementController : NetworkBehaviour
                 MouseLook.MouseMovement();
             }
         }
+    }
+
+    private void ActivateOwnCam()
+    {
+        own_camera.SetActive(true);
     }
 
     public void SetPosition()
