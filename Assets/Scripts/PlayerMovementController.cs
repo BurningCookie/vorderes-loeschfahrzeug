@@ -33,6 +33,10 @@ public class PlayerMovementController : NetworkBehaviour
             {
                 PlayerModel.SetActive(true);
                 SetPosition();
+            }
+
+            if(isLocalPlayer)
+            {
                 ActivateOwnCam();
             }
             
